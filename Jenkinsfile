@@ -29,7 +29,7 @@ pipeline{
    stage("deploy war file"){
     steps{
           sshagent(['slave-id']) {
-          sh "scp -o StrictHostKeyChecking=no target/demo.war jenkins@172.31.4.75:/var/lib/tomcat8/webapps"
+          sh "scp -o StrictHostKeyChecking=no target/demo.war jenkins@172.31.4.75:/var/lib/tomcat10/webapps"
                      }
                     }
                   }
