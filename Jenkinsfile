@@ -1,7 +1,7 @@
 pipeline{
    agent any
    tools {
-        maven 'maven3.9'
+        maven 'maven3'
         
     }
    
@@ -29,7 +29,7 @@ pipeline{
    stage("deploy war file"){
     steps{
           sshagent(['slave-id']) {
-          sh "scp -o StrictHostKeyChecking=no target/demo.war jenkins@172.31.4.75:/var/lib/tomcat10/webapps"
+          sh "scp -o StrictHostKeyChecking=no target/demo.war jenkins@172.31.11.237:/var/lib/tomcat10/webapps"
                      }
                     }
                   }
